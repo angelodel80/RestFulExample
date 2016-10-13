@@ -28,10 +28,16 @@ public class ApplicationConfig extends Application {
      * out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(it.cnr.ilc.lc.restful.example.TextSentenceResource.class);
-        resources.add(it.cnr.ilc.lc.restful.example.TextsSentenceResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.CorporaResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.GenericResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.ItemClientResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.ItemClientsResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.ItemResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.ItemsResource.class);
         resources.add(it.cnr.ilc.lc.restful.example.SentenceResource.class);
-        resources.add(org.glassfish.jersey.jackson.JacksonFeature.class);
+        resources.add(it.cnr.ilc.lc.restful.example.TextResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.TextsResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.TextsSentenceResource.class);
         resources.add(provider.MyJacksonJsonProvider.class);
     }
 

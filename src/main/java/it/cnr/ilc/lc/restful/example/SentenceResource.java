@@ -25,12 +25,12 @@ public class SentenceResource {
     private static Logger logger = LogManager.getLogger(TextSentenceResource.class);
     Sentence sentence;
 
-    private SentenceResource(String name) {
-        this.sentence = DB.getInstance().getText(name).getSentence(Integer.parseInt(name));
+    private SentenceResource(String name, String id) {
+        this.sentence = DB.getInstance().getText(name).getSentence(Integer.parseInt(id));
     }
 
-    static SentenceResource get(String name) {
-        return new SentenceResource(name);
+    static SentenceResource get(String name, String id) {
+        return new SentenceResource(name, id);
     }
 
     @GET
