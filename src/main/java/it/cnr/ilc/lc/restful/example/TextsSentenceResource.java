@@ -5,7 +5,6 @@
  */
 package it.cnr.ilc.lc.restful.example;
 
-import it.cnr.ilc.lc.restful.example.model.Sentence;
 import it.cnr.ilc.lc.restful.example.model.TextSentence;
 import it.cnr.ilc.lc.restful.example.model.junkDB.DB;
 import java.util.List;
@@ -41,6 +40,7 @@ public class TextsSentenceResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void postJson(String name) {
+        logger.info(name);
         DB.getInstance().add(TextSentence.of("ciao", "come stai"), name);
     }
 

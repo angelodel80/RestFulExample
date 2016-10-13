@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -17,6 +19,7 @@ import java.util.Map;
  */
 public class DB {
 
+    private static Logger logger = LogManager.getLogger(DB.class);
     static DB instanceDB = null;
 
     Map<String, TextSentence> db = new HashMap<>();
@@ -25,14 +28,20 @@ public class DB {
     }
 
     public static DB getInstance() {
+        logger.info("getInstance");
+
         if (instanceDB == null) {
-            return new DB();
+            logger.info("create new DB");
+            instanceDB = new DB();
+            return instanceDB;
         } else {
+            logger.info("return the DB");
             return instanceDB;
         }
     }
 
     synchronized public DB add(TextSentence text, String name) {
+        logger.info("add on DB " + name + " " + text);
         db.put(name, text);
         return this;
     }

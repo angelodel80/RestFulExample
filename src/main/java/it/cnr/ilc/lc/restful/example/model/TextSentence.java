@@ -7,6 +7,8 @@ package it.cnr.ilc.lc.restful.example.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -14,12 +16,16 @@ import java.util.List;
  */
 public class TextSentence {
 
+    private static Logger logger = LogManager.getLogger(TextSentence.class);
+
     Sentence[] sentences;
 
     private TextSentence() {
     }
 
     private TextSentence(Sentence[] sentences) {
+        logger.info("TextSentence constructor");
+        logger.info("sentences lenght" + sentences.length);
         this.sentences = sentences;
     }
 
@@ -28,6 +34,7 @@ public class TextSentence {
     }
 
     public static TextSentence of(String... sentences) {
+        logger.info("TextSentence of");
         List<Sentence> sents = new ArrayList<>();
         for (String sentence : sentences) {
             sents.add(Sentence.of(sentence));
@@ -41,6 +48,16 @@ public class TextSentence {
 
     public Sentence[] getSentences() {
         return sentences;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Sentence sentence : sentences) {
+            sb.append(sentence.getContent());
+            sb.append("; ");
+        }
+        return sb.toString();
     }
 
 }
