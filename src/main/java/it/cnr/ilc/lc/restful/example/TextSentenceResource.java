@@ -60,11 +60,11 @@ public class TextSentenceResource {
         logger.info("delete");
     }
 
-    @Path("{name}")
-    public SentenceResource getSentenceResource(@PathParam("name") String name) {
+    @Path("{id}")
+    public SentenceResource getSentenceResource(@PathParam("name") String name, @PathParam("id") String id) {
         logger.info("getSentence");
-        logger.info(name);
-        return SentenceResource.get(name);
+        logger.info(id);
+        return SentenceResource.get(name,id);
 
     }
 

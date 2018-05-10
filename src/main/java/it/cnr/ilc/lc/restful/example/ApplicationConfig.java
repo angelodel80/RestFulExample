@@ -34,8 +34,6 @@ public class ApplicationConfig extends Application {
         resources.add(it.cnr.ilc.lc.restful.example.ItemClientsResource.class);
         resources.add(it.cnr.ilc.lc.restful.example.ItemResource.class);
         resources.add(it.cnr.ilc.lc.restful.example.ItemsResource.class);
-        resources.add(it.cnr.ilc.lc.restful.example.SentenceResource.class);
-        resources.add(it.cnr.ilc.lc.restful.example.TextResource.class);
         resources.add(it.cnr.ilc.lc.restful.example.TextSentenceResource.class);
         resources.add(it.cnr.ilc.lc.restful.example.TextsResource.class);
         resources.add(it.cnr.ilc.lc.restful.example.TextsSentenceResource.class);
