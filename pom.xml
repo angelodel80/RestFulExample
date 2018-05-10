@@ -13,8 +13,14 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <dependencies>
+        <dependency>
+            <groupId>it.cnr.ilc.lc</groupId>
+            <artifactId>OmegaResourceSystem</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+  
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>

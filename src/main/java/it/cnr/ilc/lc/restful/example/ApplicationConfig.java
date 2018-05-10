@@ -39,6 +39,7 @@ public class ApplicationConfig extends Application {
         resources.add(it.cnr.ilc.lc.restful.example.TextSentenceResource.class);
         resources.add(it.cnr.ilc.lc.restful.example.TextsResource.class);
         resources.add(it.cnr.ilc.lc.restful.example.TextsSentenceResource.class);
+        resources.add(it.cnr.ilc.lc.restful.example.virtualdatasystem.RepositoryResource.class);
         resources.add(provider.MyJacksonJsonProvider.class);
     }
 
